@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Selector</title>
+
+    <style>
+        /*1. p என்பது Element Selector. or 2. Internal CSS
+        p {
+            color: blue;
+        } */
+
+        /*2. Class Selector (.)
+         .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        } */
+
+        /* 3. ID Selector (#)
+        #heading {
+            color: red;
+        }
+
+        #paragraph {
+            color: blue;
+        } */
+
+        /* 4. Universal Selector (*)
+        *{
+            color: blue;
+        } */
+
+        /* 5. Group Selector
+         h1, p {
+            color: blue;
+        } */
+
+        /* 6. Attribute Selector
+         input[type="text"] {
+            background-color: yellow;
+        } */
+
+        /* 7. Descendant Selector div and div kula section kula irrukura p lyum color marum
+          div p {
+            color: red;
+        } */
+
+        /* 8. Child Selector (>) 
+        div-ன் direct child-ஆக இருக்கும் p-க்கு மட்டும் red color கொடு.
+        div>p {
+            color: red;
+        } */
+
+        /* 9. Adjacent Sibling Selector (+)
+        h1-க்கு உடனடியாக next-ஆ வரும் p element-க்கு மட்டும் red color கொடு.
+         h1 + p {
+            color: red;
+        } */
+
+        /* 10. General Sibling Selector (~)
+        h1-க்கு பிறகு வரும் எல்லா p sibling elements-க்கும் red color கொடு.
+         h1 ~ p {
+            color: red;
+        } */
+    </style>
+
+    <!-- 3. External CSS
+    <link rel="stylesheet" href="css selector External.css"> -->
+</head>
+
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <p>Hello</p>
+    <p>Welcome to CSS</p>
+    <h1 class="red">Hello</h1>
+
+    <p class="blue">Welcome to CSS</p>
+
+    <p class="red">Class Selector Example</p>
+
+    <h1 id="heading">Welcome to HTML</h1>
+
+    <p id="paragraph">This is ID Selector.</p>
+
+    <!-- 1. Inline CSS -->
+    <p style="color: red;">Hello</p>
+
+    <input type="text" placeholder="Enter Name">
+
+    <input type="password" placeholder="Enter Password">
+
+    <div>
+        <p>This paragraph is inside div.</p>
+        <section>
+            <p>Hello</p>
+        </section>
+    </div>
+
+    <p>This paragraph is outside div.</p>
+
+    <h1>Welcome to HTML</h1>
+
+    <p>This paragraph is immediately after h1.</p>
+
+    <p>This is another paragraph.</p>
+
+    <h1>Welcome to HTML</h1>
+
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+
+</body>
+
+</html>
