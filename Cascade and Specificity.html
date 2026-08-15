@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade and Specificity Pratice</title>
+
+    <!-- cascade concept line by line which one is last color athu than website la show agum -->
+    <style>
+        p{
+            color: blue;
+            color: yellow;
+        }
+        p{
+            color: green;
+            color: aquamarine;
+        }
+       
+        /* Specificity concept */
+        /* inline(style)->id->class->attripute->tag->universal. ithu padi than first preferance kodukum*/
+        #one{
+            color: blueviolet;
+        }
+        .two{
+            color: brown;
+        }
+   </style>
+</head>
+<body>
+    <p  id="one" class="two">Hi New World</p>
+</body>
+</html>

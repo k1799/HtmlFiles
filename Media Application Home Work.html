@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Media Application</title>
+    <link rel="stylesheet" href="mediaplayer.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>HTML5 Media Player</h1>
+        <p>Select an option from the menu</p>
+
+        <!-- menu -->
+        <div class="menu">
+            <button onclick="playAudio()">Play Audio</button>
+
+            <button onclick="playVideo()">Play Video</button>
+
+            <button onclick="showSubtitles()">Display Subtitles</button>
+
+            <button onclick="exitMedia()">Exit</button>
+        </div>
+
+        <!-- media  Area-->
+        <div id="mediaArea">
+
+            <!-- Audio -->
+            <div id="audioSection" class="mediaSection">
+
+                <h2>Audio Player</h2>
+
+                <audio id="audioPlayer" controls>
+
+                    <source src="./Beat Of Master Instrumental.mp3" type="audio/mpeg">
+
+                    Your browser does not support the audio element.
+
+                </audio>
+
+            </div>
+
+            <!-- Video -->
+            <div id="videoSection" class="mediaSection">
+
+                <h2>Video Player</h2>
+
+                <video id="videoPlayer" width="600" controls>
+
+                    <source src="./videoplayback.mp4" type="video/mp4">
+
+                    <!-- Subtitles -->
+               <track
+            id="subtitleTrack"
+            src="./subtitles.vtt"
+            kind="subtitles"
+            srclang="en"
+            label="English">
+
+        Your browser does not support the video element.
+
+    </video>
+
+
+                   
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        // Get HTML elements
+
+        const audioSection =
+            document.getElementById("audioSection");
+
+        const videoSection =
+            document.getElementById("videoSection");
+
+        const audioPlayer =
+            document.getElementById("audioPlayer");
+
+        const videoPlayer =
+            document.getElementById("videoPlayer");
+
+
+        // Initially hide both
+
+        audioSection.style.display = "none";
+
+        videoSection.style.display = "none";
+
+
+        // Option 1 - Play Audio
+
+        function playAudio() {
+
+            // Stop video
+            videoPlayer.pause();
+
+            // Hide video
+            videoSection.style.display = "none";
+
+            // Show audio
+            audioSection.style.display = "block";
+
+            // Play audio
+            audioPlayer.play();
+        }
+
+
+        // Option 2 - Play Video
+
+        function playVideo() {
+
+            // Stop audio
+            audioPlayer.pause();
+
+            // Hide audio
+            audioSection.style.display = "none";
+
+            // Show video
+            videoSection.style.display = "block";
+
+            // Play video
+            videoPlayer.play();
+        }
+
+
+        // Option 3 - Display Subtitles
+
+        // function showSubtitles() {
+
+        //     // Stop audio
+        //     audioPlayer.pause();
+
+        //     // Hide audio
+        //     audioSection.style.display = "none";
+
+        //     // Show video
+        //     videoSection.style.display = "block";
+
+        //     // Stop video
+        //     videoPlayer.pause();
+
+        //     // Show subtitles
+        //     videoPlayer.textTracks[0].mode = "showing";
+        // }
+
+        function showSubtitles() {
+
+            audioPlayer.pause();
+
+            audioSection.style.display = "none";
+            videoSection.style.display = "block";
+           
+             videoPlayer.textTracks[0].mode = "showing";
+
+            videoPlayer.play();
+        }
+
+
+        // Option 4 - Exit
+
+        // function exitMedia() {
+
+        //     // Stop audio
+        //     audioPlayer.pause();
+
+        //     // Stop video
+        //     videoPlayer.pause();
+
+        //     // Hide audio
+        //     audioSection.style.display = "none";
+
+        //     // Hide video
+        //     videoSection.style.display = "none";
+        // }
+
+        function exitMedia() {
+
+    // Stop audio
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+
+    // Stop video
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+
+    // Hide audio
+    audioSection.style.display = "none";
+
+    // Hide video
+    videoSection.style.display = "none";
+
+    subtitleText.style.display = "none";
+}
+
+    </script>
+
+
+</body>
+
+</html>

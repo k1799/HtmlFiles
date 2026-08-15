@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML5 Media Application</title>
+
+    <link rel="stylesheet" href="mediaplayer.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>HTML5 Media Player</h1>
+
+        <p>Select an option from the menu</p>
+
+
+        <!-- Menu -->
+
+        <div class="menu">
+
+            <button onclick="playAudio()">Play Audio</button>
+
+            <button onclick="playVideo()">Play Video</button>
+
+            <button onclick="showSubtitles()">Display Subtitles</button>
+
+            <button onclick="exitMedia()">Exit</button>
+
+        </div>
+
+
+        <!-- Media Area -->
+
+        <div id="mediaArea">
+
+
+            <!-- Audio -->
+
+            <div id="audioSection" class="mediaSection">
+
+                <h2>Audio Player</h2>
+
+                <audio id="audioPlayer" controls>
+
+                    <source
+                        src="./Beat Of Master Instrumental.mp3"
+                        type="audio/mpeg">
+
+                    Your browser does not support the audio element.
+
+                </audio>
+
+            </div>
+
+
+            <!-- Video -->
+
+            <div id="videoSection" class="mediaSection">
+
+                <h2>Video Player</h2>
+
+                <div class="videoContainer">
+
+                    <video id="videoPlayer" width="600" controls>
+
+                        <source
+                            src="./videoplayback.mp4"
+                            type="video/mp4">
+
+                        <track
+                            id="subtitleTrack"
+                            src="./subtitles.vtt"
+                            kind="subtitles"
+                            srclang="en"
+                            label="English">
+
+                        Your browser does not support the video element.
+
+                    </video>
+
+
+                    <!-- Custom Subtitle -->
+
+                    <div id="subtitleText"></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        // Get elements
+
+        const audioSection =
+            document.getElementById("audioSection");
+
+        const videoSection =
+            document.getElementById("videoSection");
+
+        const audioPlayer =
+            document.getElementById("audioPlayer");
+
+        const videoPlayer =
+            document.getElementById("videoPlayer");
+
+        const subtitleTrack =
+            document.getElementById("subtitleTrack");
+
+        const subtitleText =
+            document.getElementById("subtitleText");
+
+
+        // Initially hide media
+
+        audioSection.style.display = "none";
+
+        videoSection.style.display = "none";
+
+
+        // -------------------------------
+        // Option 1 - Play Audio
+        // -------------------------------
+
+        function playAudio() {
+
+            videoPlayer.pause();
+
+            videoSection.style.display = "none";
+
+            audioSection.style.display = "block";
+
+            subtitleText.style.display = "none";
+
+            audioPlayer.play();
+
+        }
+
+
+        // -------------------------------
+        // Option 2 - Play Video
+        // -------------------------------
+
+        function playVideo() {
+
+            audioPlayer.pause();
+
+            audioSection.style.display = "none";
+
+            videoSection.style.display = "block";
+
+            subtitleText.style.display = "none";
+
+            videoPlayer.play();
+
+        }
+
+
+        // -------------------------------
+        // Option 3 - Display Subtitles
+        // -------------------------------
+
+        function showSubtitles() {
+
+            audioPlayer.pause();
+
+            audioSection.style.display = "none";
+
+            videoSection.style.display = "block";
+
+
+            // Enable HTML5 subtitles
+
+            subtitleTrack.track.mode = "hidden";
+
+
+            // Start video from beginning
+
+            videoPlayer.currentTime = 0;
+
+            videoPlayer.play();
+
+        }
+
+
+        // -------------------------------
+        // Show subtitle based on time
+        // -------------------------------
+
+        videoPlayer.addEventListener("timeupdate", function () {
+
+            const currentTime = videoPlayer.currentTime;
+
+
+            if (currentTime >= 0 && currentTime < 10) {
+
+                subtitleText.innerText =
+                    "HELLO! THIS IS MY HTML5 VIDEO.";
+
+                subtitleText.style.display = "block";
+
+            }
+
+            else if (currentTime >= 10 && currentTime < 20) {
+
+                subtitleText.innerText =
+                    "WELCOME TO MY MEDIA PLAYER.";
+
+                subtitleText.style.display = "block";
+
+            }
+
+            else if (currentTime >= 20 && currentTime < 30) {
+
+                subtitleText.innerText =
+                    "THIS IS A SUBTITLE DEMONSTRATION.";
+
+                subtitleText.style.display = "block";
+
+            }
+
+            else {
+
+                subtitleText.style.display = "none";
+
+            }
+
+        });
+
+
+        // -------------------------------
+        // Option 4 - Exit
+        // -------------------------------
+
+        function exitMedia() {
+
+            audioPlayer.pause();
+
+            videoPlayer.pause();
+
+
+            audioPlayer.currentTime = 0;
+
+            videoPlayer.currentTime = 0;
+
+
+            audioSection.style.display = "none";
+
+            videoSection.style.display = "none";
+
+
+            subtitleText.style.display = "none";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
