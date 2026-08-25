@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+           
+            margin-top: 100px;
+            height: 60px;
+            width: 60px;
+            background-color: blue;
+            border-radius: 50%;
+            animation: bounce 2s linear infinite;
+            position: relative;
+        }
+
+        @keyframes bounce
+        {
+            0%
+            {
+                transform: translateX(0px);
+                left: 0px;
+            }
+            50%
+            {
+                   transform: translateX(100px);
+                left: 250px;
+            }
+            100%
+            {
+                transform: translateX(0px);
+
+                left: 0px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

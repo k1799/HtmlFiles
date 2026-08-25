@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .total{
+            display: flex;
+              animation: spinned 4s linear  2 ;
+
+            
+        }
+        .spin {
+            
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+          
+            margin-left: 3px;
+        }
+        .total:hover
+        {
+            animation-play-state:paused ;
+        }
+
+
+        @keyframes spinned {
+            from {
+                transform: translateX(-0px);
+            }
+
+            to {
+                transform: translateX(90vw);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="total">
+    <div class="spin">
+
+    </div>
+      <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>  <div class="spin">
+
+    </div>
+    </div>
+
+</body>
+
+</html>

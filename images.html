@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+
+    display: flex;
+     justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+   
+}
+
+.slider {
+    width: 600px;
+    height: 350px;
+overflow: hidden;
+    
+}
+
+.slides {
+    display: flex;
+
+    animation: slide 8s linear infinite;
+}
+
+.slides img {
+    width: 600px;
+    height: 350px;
+flex-shrink: 0;
+object-fit: cover;
+   
+
+  
+}
+
+
+/* 1 → 2 → 3 → 1 */
+
+@keyframes slide {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    33.33% {
+        transform: translateX(-600px);
+    }
+
+    50% {
+        transform: translateX(-600px);
+    }
+
+    58.33% {
+        transform: translateX(-1200px);
+    }
+
+    75% {
+        transform: translateX(-1200px);
+    }
+
+    83.33% {
+        transform: translateX(-1800px);
+    }
+
+    100% {
+        transform: translateX(-1800px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+
+        <div class="slides">
+
+            <img src="./ChatGPT Image Aug 18, 2026, 12_18_24 PM.png" alt="Image 1">
+            <img src="./f89ed7a8-5928-460a-bfad-6e9a65e861ab.png" alt="Image 2">
+            <img src="./seo.png" alt="Image 3">
+
+            <img src="./ChatGPT Image Aug 18, 2026, 12_18_24 PM.png" alt="Image 4">
+
+
+        </div>
+
+    </div>
+</body>
+</html>

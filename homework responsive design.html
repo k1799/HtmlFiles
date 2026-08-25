@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #222;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            color: orange;
+        }
+
+        .menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="logo">welcome</div>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Rooms</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="menu" onclick="toggleMenu()">☰</button>
+
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

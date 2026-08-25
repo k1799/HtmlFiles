@@ -1,0 +1,1083 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 60px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1d1e22;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+    transform: translateY(-6px);
+}
+
+.bookbtn {
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.bookbtn:hover {
+    background-color: #1e3a8a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.heroimage {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+.herooverlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 1;
+}
+
+.herotitle {
+    position: relative;
+    max-width: 800px;
+    padding: 20px;
+
+    color: white;
+    z-index: 2;
+}
+
+.herotitle h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+
+.herotitle p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: antiquewhite;
+}
+
+.herobookbtn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.herobookbtn:hover {
+    background-color: #1e3a8a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 60px;
+}
+
+.aboutimage {
+    flex: 1;
+    width: 50%;
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.aboutslider {
+    display: flex;
+    width: 600%;
+    height: 100%;
+    animation: slide 18s linear 2s infinite;
+}
+
+@keyframes slide {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    14% {
+        transform: translateX(0);
+    }
+
+    18% {
+        transform: translateX(-16.666%);
+    }
+
+    32% {
+        transform: translateX(-16.666%);
+    }
+
+    36% {
+        transform: translateX(-33.333%);
+    }
+
+    50% {
+        transform: translateX(-33.333%);
+    }
+
+    54% {
+        transform: translateX(-50%);
+    }
+
+    68% {
+        transform: translateX(-50%);
+    }
+
+    72% {
+        transform: translateX(-66.666%);
+    }
+
+    86% {
+        transform: translateX(-66.666%);
+    }
+
+    90% {
+        transform: translateX(-83.333%);
+    }
+
+    100% {
+        transform: translateX(-83.333%);
+    }
+}
+
+.aboutslider img {
+    width: 16.666%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.aboutcontent {
+    flex: 1;
+}
+
+.aboutcontent h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+.aboutcontent h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #1c2029;
+}
+
+.aboutcontent h4 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    font-weight: 500;
+}
+
+.aboutcontent p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #64748b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rooms {
+    padding: 60px 60px;
+    background: #f7f7f7;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.roomstitle {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.roomstitle h2 {
+    font-size: 38px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.roomstitle p {
+    color: #666;
+    font-size: 16px;
+}
+
+.roomcontainer {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.roomcard {
+    flex: 1;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.roomcard img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.roominfo {
+    padding: 25px;
+}
+
+.roominfo h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2563eb;
+}
+
+.roominfo p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.roominfo span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.roomcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.roombtn {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.roombtn:hover {
+    background: #1e3a8a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.facilities {
+    padding: 80px 60px;
+}
+
+.facilitiestitle {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.facilitiestitle h2 {
+    font-size: 38px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.facilitiestitle p {
+    color: #666;
+    font-size: 16px;
+}
+
+.facilitiescontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.facilitiescard {
+    flex: 1 1 30%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.facilitiescard h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: #2563eb;
+}
+
+.facilitiescard p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.facilitiescard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact {
+    padding: 80px 60px;
+    margin-top: 25px;
+    background: #f7f7f7;
+}
+
+.contacttitle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contacttitle h2 {
+    font-size: 38px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.contacttitle p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+.contactform {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contactform label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contactform input,
+.contactform select,
+.contactform textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.contactform button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contactform button:hover {
+    background-color: #1e3a8a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.reviews {
+    padding: 80px 60px;
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+.reviewstitle {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.reviewstitle h2 {
+    font-size: 38px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.reviewstitle p {
+    color: #666;
+    font-size: 16px;
+}
+
+.reviewscontainer {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: move 18s linear infinite;
+}
+
+.reviewcard {
+    flex: 0 0 350px;
+    max-width: 380px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.stars {
+    font-size: 22px;
+    color: #f5b301;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.reviewcard p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.reviewscontainer:hover {
+    animation-play-state: paused;
+}
+
+/* .reviewcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+} */
+
+@keyframes move {
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(110vw);
+    }
+
+}
+
+
+
+
+
+
+
+
+footer {
+    background-color: #294286;
+    color: white;
+    padding-top: 60px;
+}
+
+.footercontent {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+    /* cursor: default; */
+}
+
+.footercontent h3,
+.footercontent h4 {
+    margin-bottom: 20px;
+}
+
+.footercontent p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.footerlinks a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+
+}
+
+.footerlinks a:hover {
+    text-decoration: underline;
+}
+
+.footerbottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+}
+
+.footerhead {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footerhead img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.footerhead h3 {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 650px;
+        padding: 40px 20px;
+    }
+
+    .herotitle {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .herotitle h1 {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .herotitle p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .herobookbtn {
+        padding: 12px 24px;
+    }
+
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .about {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .aboutimage {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .aboutslider img {
+        height: 300px;
+    }
+
+    .aboutcontent {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .rooms {
+        padding: 50px 20px;
+    }
+
+    .roomstitle h2 {
+        font-size: 32px;
+    }
+
+    .roomstitle p {
+        font-size: 16px;
+    }
+
+    .roomcontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .roomcard {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .roomcard img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .facilities {
+        padding: 50px 20px;
+    }
+
+    .facilitiestitle h2 {
+        font-size: 32px;
+    }
+
+    .facilitiestitle p {
+        font-size: 16px;
+    }
+
+    .facilitiescontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .facilitiescard {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .reviews {
+        padding: 50px 20px;
+    }
+
+    .reviewstitle h2 {
+        font-size: 32px;
+    }
+
+
+    .reviewstitle p {
+        font-size: 16px;
+    }
+
+    .reviewcard {
+        flex: 0 0 280px;
+        padding: 25px;
+    }
+
+    .reviewscontainer {
+        gap: 20px;
+        animation-duration: 20s;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .contacttitle h2 {
+        font-size: 32px;
+    }
+
+    .contacttitle p {
+        font-size: 16px;
+    }
+
+    .contactform {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .contactform form {
+        width: 100%;
+    }
+
+    .contactform input,
+    .contactform textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contactform button {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    footer {
+        padding-top: 40px;
+    }
+
+    .footercontent {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .footerabout,
+    .footerlinks,
+    .footercontact {
+        width: 100%;
+    }
+
+    .footerhead {
+        justify-content: center;
+    }
+
+    .footercontent p {
+        white-space: normal;
+    }
+
+    .footerbottom {
+        margin-top: 30px;
+        padding: 20px 10px;
+    }
+
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 180px;
+        height: auto;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .bookbtn {
+        padding: 10px 20px;
+    }
+
+}
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 10px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .bookbtn {
+        font-size: 14px;
+        padding: 9px 16px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 30px 15px;
+    }
+
+    .herotitle h1 {
+        font-size: 32px;
+    }
+
+    .herotitle p {
+        font-size: 15px;
+    }
+
+    .herobookbtn {
+        padding: 11px 20px;
+    }
+
+    .about {
+        padding: 40px 15px;
+    }
+
+    .aboutimage {
+        height: 250px;
+    }
+
+    .aboutcontent h2 {
+        font-size: 30px;
+    }
+
+    .aboutcontent h3 {
+        font-size: 22px;
+    }
+
+    .aboutcontent h4 {
+        font-size: 30px;
+    }
+
+    .rooms {
+        padding: 40px 15px;
+    }
+
+    .roomstitle h2,
+    .facilitiestitle h2,
+    .contacttitle h2,
+    .reviewstitle h2 {
+        font-size: 30px;
+    }
+
+    .roomcard img {
+        height: 220px;
+    }
+
+    .facilities {
+        padding: 40px 15px;
+    }
+
+    .facilitiescard {
+        padding: 25px 20px;
+    }
+
+    .reviews {
+        padding: 40px 15px;
+    }
+
+    .reviewcard {
+        flex: 0 0 270px;
+        padding: 22px;
+    }
+
+    .contact {
+        padding: 40px 15px;
+    }
+
+    .contactform {
+        padding: 25px 20px;
+    }
+
+}
