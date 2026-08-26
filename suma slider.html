@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ============================= */
+        /*       LIFE AT STAYNEST        */
+        /* ============================= */
+
+        .life {
+            padding: 80px 60px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+
+        /* ============================= */
+        /*           IMAGE SLIDER        */
+        /* ============================= */
+
+        .lifeimage {
+            flex: 1;
+            width: 50%;
+            height: 600px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .lifeslider {
+            display: flex;
+            width: 600%;
+            height: 100%;
+            animation: lifeslide 18s linear 2s infinite;
+        }
+
+        .lifeslider img {
+            width: 16.666%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+
+        /* ============================= */
+        /*          SLIDE ANIMATION      */
+        /* ============================= */
+
+        @keyframes lifeslide {
+
+            0% {
+                transform: translateX(0);
+            }
+
+            14% {
+                transform: translateX(0);
+            }
+
+            18% {
+                transform: translateX(-16.666%);
+            }
+
+            32% {
+                transform: translateX(-16.666%);
+            }
+
+            36% {
+                transform: translateX(-33.333%);
+            }
+
+            50% {
+                transform: translateX(-33.333%);
+            }
+
+            54% {
+                transform: translateX(-50%);
+            }
+
+            68% {
+                transform: translateX(-50%);
+            }
+
+            72% {
+                transform: translateX(-66.666%);
+            }
+
+            86% {
+                transform: translateX(-66.666%);
+            }
+
+            90% {
+                transform: translateX(-83.333%);
+            }
+
+            100% {
+                transform: translateX(-83.333%);
+            }
+        }
+
+
+        /* ============================= */
+        /*             CONTENT           */
+        /* ============================= */
+
+        .lifecontent {
+            flex: 1;
+        }
+
+        .lifecontent h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .lifecontent h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1c2029;
+            font-weight: 600;
+        }
+
+        .lifecontent p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #64748b;
+        }
+
+
+        /* ============================= */
+        /*          FEATURES             */
+        /* ============================= */
+
+        .lifefeatures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 25px;
+            margin-top: 25px;
+        }
+
+        .lifefeature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lifefeature span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 25px;
+            height: 25px;
+
+            border-radius: 50%;
+
+            background: #1e3a8a;
+            color: white;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .lifefeature p {
+            margin: 0;
+            font-size: 15px;
+            color: #334155;
+        }
+
+
+        /* ============================= */
+        /*          RESPONSIVE           */
+        /* ============================= */
+
+        @media (max-width: 900px) {
+
+            .life {
+                flex-direction: column;
+                gap: 40px;
+                padding: 60px 30px;
+            }
+
+            .lifeimage {
+                width: 100%;
+                height: 500px;
+            }
+
+            .lifecontent {
+                width: 100%;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .life {
+                padding: 50px 20px;
+            }
+
+            .lifeimage {
+                height: 350px;
+            }
+
+            .lifecontent h2 {
+                font-size: 30px;
+            }
+
+            .lifecontent h3 {
+                font-size: 23px;
+            }
+
+            .lifefeatures {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="life" class="life">
+
+            <div class="lifecontent">
+
+                <h2>LIFE AT STAYNEST</h2>
+
+                <h3>More Than Just a Place to Stay</h3>
+
+                <p>
+                    StayNest is designed to make everyday living comfortable,
+                    convenient and enjoyable for students and working professionals.
+                </p>
+
+                <p>
+                    From comfortable rooms and peaceful study spaces to dining,
+                    relaxation and essential facilities, everything is designed
+                    to make you feel at home.
+                </p>
+
+
+                <div class="lifefeatures">
+
+                    <div class="lifefeature">
+                        <span>✓</span>
+                        <p>Comfortable Rooms</p>
+                    </div>
+
+                    <div class="lifefeature">
+                        <span>✓</span>
+                        <p>Study-Friendly Spaces</p>
+                    </div>
+
+                    <div class="lifefeature">
+                        <span>✓</span>
+                        <p>Clean Dining Area</p>
+                    </div>
+
+                    <div class="lifefeature">
+                        <span>✓</span>
+                        <p>Safe & Convenient Living</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="lifeimage">
+
+                <div class="lifeslider">
+
+                    <img src="./simpleroom.jpg" alt="Comfortable StayNest Room">
+
+                    <img src="./studyarea.jpg" alt="StayNest Study Area">
+
+                    <img src="./relaxarea.jpg" alt="StayNest Dining Area">
+
+                    <img src="./foodcourt.jpg" alt="StayNest Lounge">
+
+                    <img src="./landuryarea.avif" alt="StayNest Laundry Facility">
+
+                    <img src="./simpleroom.jpg" alt="StayNest Living Space">
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

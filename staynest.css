@@ -12,6 +12,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* header{
+position: sticky;
+    top: 0;
+    z-index: 1000;
+     background-color: white;
+} */
+
 .navbar {
     display: flex;
     align-items: center;
@@ -19,6 +26,7 @@ body {
     justify-content: space-between;
     padding: 20px 60px;
     border-bottom: 1px solid #e5e7eb;
+    
 }
 
 .logo {
@@ -99,15 +107,6 @@ nav a:hover {
     z-index: 0;
 }
 
-.herooverlay {
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.45);
-
-    z-index: 1;
-}
-
 .herotitle {
     position: relative;
     max-width: 800px;
@@ -133,9 +132,9 @@ nav a:hover {
 .herobookbtn {
     display: inline-block;
     text-decoration: none;
-    background-color: #2563eb;
+    background-color: #4f6fb6;
     color: white;
-    padding: 13px 28px;
+    padding: 20px 40px;
     border-radius: 5px;
     font-weight: 600;
     transition: 0.3s;
@@ -282,6 +281,152 @@ nav a:hover {
 
 
 
+.life {
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.lifeimage {
+    flex: 1;
+    width: 50%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.lifeslider {
+    display: flex;
+    width: 600%;
+    height: 100%;
+    animation: lifeslide 18s linear 2s infinite;
+}
+
+.lifeslider img {
+    width: 16.666%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@keyframes lifeslide {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    14% {
+        transform: translateX(0);
+    }
+
+    18% {
+        transform: translateX(-16.666%);
+    }
+
+    32% {
+        transform: translateX(-16.666%);
+    }
+
+    36% {
+        transform: translateX(-33.333%);
+    }
+
+    50% {
+        transform: translateX(-33.333%);
+    }
+
+    54% {
+        transform: translateX(-50%);
+    }
+
+    68% {
+        transform: translateX(-50%);
+    }
+
+    72% {
+        transform: translateX(-66.666%);
+    }
+
+    86% {
+        transform: translateX(-66.666%);
+    }
+
+    90% {
+        transform: translateX(-83.333%);
+    }
+
+    100% {
+        transform: translateX(-83.333%);
+    }
+}
+
+.lifecontent {
+    flex: 1;
+}
+
+.lifecontent h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.lifecontent h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1c2029;
+    font-weight: 600;
+}
+
+.lifecontent p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #64748b;
+}
+
+
+.lifefeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 25px;
+    margin-top: 25px;
+}
+
+.lifefeature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lifefeature span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #1e3a8a;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lifefeature p {
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+}
+
+
+
+
+
+
 
 
 
@@ -402,7 +547,7 @@ nav a:hover {
 
 
 .facilities {
-    padding: 80px 60px;
+    padding: 60px 60px;
 }
 
 .facilitiestitle {
@@ -494,6 +639,7 @@ nav a:hover {
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
+    background: #f7f7f7;
     padding: 35px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -571,7 +717,14 @@ nav a:hover {
     display: flex;
     gap: 30px;
     width: max-content;
-    animation: move 18s linear infinite;
+    animation: move 15s linear infinite;
+}
+
+.reviewgroup {
+    display: flex;
+    gap: 30px;
+    flex-shrink: 0;
+    padding-right: 30px;
 }
 
 .reviewcard {
@@ -599,7 +752,8 @@ nav a:hover {
 }
 
 .reviewscontainer:hover {
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
+     animation: moved 15s linear infinite;
 }
 
 /* .reviewcard:hover {
@@ -607,7 +761,7 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
 } */
 
-@keyframes move {
+/* @keyframes move {
 
     from {
         transform: translateX(-100%);
@@ -617,7 +771,32 @@ nav a:hover {
         transform: translateX(110vw);
     }
 
+} */
+@keyframes move {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-4500px);
+    }
+
 }
+@keyframes moved {
+
+    from {
+        transform: translateX(-4500px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+
 
 
 
@@ -753,6 +932,32 @@ footer {
     }
 
     .aboutcontent {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .life {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .lifeimage {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .lifeslider img {
+        height: 300px;
+    }
+
+    .lifecontent {
         width: 100%;
         text-align: center;
     }
