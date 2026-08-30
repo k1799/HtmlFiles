@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Menu</title>
+</head>
+
+<body>
+    <!-- 1.Question:
+Create a menu-driven program using HTML + JavaScript + DOM.
+Menu:
+Read text from DOM
+Add two numbers from DOM
+Change CSS using DOM
+Exit -->
+    <h2 id="heading">Welcome to DOM</h2>
+    <p id="text">Hello, this is a paragraph.</p>
+    <input type="number" name="" id="num1" placeholder="Enter first number">
+    <input type="number" name="" id="num2" placeholder="Enter second number">
+    <br><br>
+    <button onclick="readtext()">Read Text from DOM</button>
+    <button onclick="addnumbers()">Add Two Numbers</button>
+    <button onclick="changecss()">ChangeCSS</button>
+    <button onclick="exitprogram()">Exit</button>
+    <p id="result"></p>
+    <script>
+     function readtext(){
+        let text = document.getElementById("text").innerText;
+        document.getElementById("result").innerText = "Text: "+text;
+     }
+
+     function addnumbers(){
+      let num1 = Number(document.getElementById("num1").value);
+      let num2 = Number(document.getElementById("num2").value);
+      
+      let sum = num1 + num2;
+
+      document.getElementById("result").innerText = "Sum: "+sum;
+      console.log("Sum: "+sum);
+     }
+
+     function changecss(){
+        document.getElementById("heading").style.color = "blue";
+
+        document.getElementById("heading").style.backgroundColor = "green";
+     }
+
+     function exitprogram(){
+        document.getElementById("result").innerText = "program exited";
+     }
+    </script>
+</body>
+
+</html>

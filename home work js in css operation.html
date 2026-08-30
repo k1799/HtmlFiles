@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Operations</title>
+</head>
+
+<body>
+    <!-- QUESTION 2: MENU CSS OPERATIONS (DOM)
+    Menu
+    Change color
+    Increase font size
+    Hide element
+    Exit -->
+
+    <h2 id="heading">JavaScript DOM</h2>
+
+    <button onclick="changecolor()">Change Color</button>
+    <button onclick="increasefont()">Increase Font Size</button>
+    <button onclick="hideelement()">Hide Element</button>
+    <button onclick="exitprogram()">Exit</button>
+    <p id="result"></p>
+
+    <script>
+        function changecolor(){
+            document.getElementById("heading").style.color = "blue";
+        }
+         function increasefont(){
+            document.getElementById("heading").style.fontSize = "40px";
+        }
+         function hideelement(){
+            document.getElementById("heading").style.display = "none";
+        }
+         function exitprogram(){
+            document.getElementById("result").innerText = "program exited";
+        }
+    </script>
+</body>
+
+</html>

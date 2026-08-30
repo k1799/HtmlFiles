@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <h2 id="name">kannan</h2>
+    </div>
+    <h1 class="red">uiguig</h1>
+    <h1 class="red">oiohih</h1>
+    <h1 class="red">uigiug</h1>
+        <form action="">
+      <h2>DOM Selectors UI ✨</h2>
+
+      <!-- ID -->
+       <div class="row">
+        <label id="nameid">ID:</label>
+        <input id="myId" value="rajesh">
+      </div> 
+
+      <!-- CLASS -->
+       <div class="row">
+         <label>Class:</label>
+        <input class="myClass" value="Class 1">
+      </div>
+
+      <div class="row">
+        <label></label>
+        <input class="myClass" value="Class 2">
+      </div> 
+
+      <!-- TAG -->
+     <div class="row">
+         <label>Tag (p):</label>
+      </div>
+
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+
+      <!-- QUERY SELECTOR -->
+      <div class="row">
+        <label>QuerySelector:</label>
+        <input id="qsOutput">
+      </div>
+
+      <!-- QUERY SELECTOR ALL -->
+       <div class="row">
+        <label>QuerySelectorAll:</label>
+        <input id="qsAllOutput">
+      </div> 
+
+     
+    </form>
+    <script>
+        let b =document.getElementById("name");
+        console.log(b.textContent);
+
+        // const o = document.getElementByTagName("h1");
+        // o.style.backgroundColor = "blue";
+        let a = document.getElementsByClassName("red");
+
+        //one class change
+        // i[0].style.color = "blue";
+
+        //all class change
+        console.log(a)
+        for (let i of a) {
+            i.style.color = "red";
+        }
+
+        //form using 
+
+       let x = document.getElementsByClassName("row").value;
+       console.log(x[0]);
+
+    </script>
+</body>
+
+</html>
