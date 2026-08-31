@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- one example -->
+    <!-- <h1 id="title">Hello</h1>
+    <button id="btn">Change</button> -->
+
+    <!-- two example -->
+    <!-- <h1>DOM</h1>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="button()">Submit</button>
+    <p id="result"></p> -->
+
+    <!-- 1️⃣ click Event -->
+    <!-- <button id="btn">Click Me</button> -->
+
+    <!-- 2️⃣ input Event -->
+    <!-- <input id="name"> -->
+
+    <!-- 3️⃣ change Event -->
+    <!-- <input id="name"> -->
+
+    <!-- 4️⃣ mouseover -->
+    <!-- <h1 id="title">Hello</h1> -->
+
+    <!-- sample addEventListener -->
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="btn">Submit</button>
+    <p id="result"></p>
+
+    <!-- simple example -->
+    <!-- <button id="btn">Click Me</button> -->
+
+    <!-- 4️⃣ Input example -->
+    <!-- <input id="name"> -->
+
+    <!-- 🔥 ஒரு முக்கியமான example -->
+    <!-- <input id="name" placeholder="Enter your name">
+    <button id="btn">Submit</button>
+    <p id="result"></p> -->
+    <script>
+        // one example
+        // let title = document.getElementById("title");
+        // let button = document.getElementById("btn");
+
+        // button.addEventListener("click", function () {
+
+        //     title.textContent = "Welcome Kannan";
+
+        // });
+
+        // <!-- two example -->
+        // function button() {
+        //     let name = document.getElementById("name").value;
+
+        //     document.getElementById("result").innerText = "Welcome " + name;
+
+        //     console.log("Welcome " + name);
+        // }
+
+        // 1️⃣ click Event
+        // let button = document.getElementById("btn");
+        // button.addEventListener("click", function () {
+        //     console.log("Button clicked");
+        // });
+
+        // 2️⃣ input Event
+        // let input = document.getElementById("name");
+        // input.addEventListener("input", function () {
+        //     console.log("User is typing");
+        // });
+
+        // 3️⃣ change Event
+        // let input = document.getElementById("name");
+        // input.addEventListener("change", function () {
+        //     console.log("Value changed");
+        // });
+
+        // 4️⃣ mouseover
+        // let title = document.getElementById("title");
+        // title.addEventListener("mouseover", function () {
+        //     console.log("Mouse is over the heading");
+        // });
+
+        // 5️⃣ keydown
+        // document.addEventListener("keydown", function () {
+        //     console.log("Key pressed");
+        // });
+
+        // sample addEventListener
+        let input = document.getElementById("name");
+        let button = document.getElementById("btn");
+        let result = document.getElementById("result");
+        button.addEventListener("click", function(){
+            let name = input.value;
+            result.textContent = "Hi " + name;
+            console.log("Hi " + name);
+        });
+
+        // simple example
+        // let button = document.getElementById("btn");
+        // button.addEventListener("click", function (event) {
+        //     console.log(event);
+        // });
+
+        // 1️⃣ event.type
+        // button.addEventListener("click", function (event) {
+        //     console.log(event.type);
+        // });
+
+        // 2️⃣ event.target
+        // button.addEventListener("click", function (event) {
+        //     console.log(event.target);
+        // });
+
+        // 3️⃣ Keyboard Event
+        // document.addEventListener("keydown", function (e) {
+        //     console.log(e.key);
+        // });
+
+        // 4️⃣ Input example
+        // let input = document.getElementById("name");
+        // input.addEventListener("input", function (e) {
+        //     console.log(e.target.value);
+        // });
+
+        // 🔥 ஒரு முக்கியமான example
+        // let input = document.getElementById("name");
+        // let button = document.getElementById("btn");
+        // let result = document.getElementById("result");
+        // button.addEventListener("click", function (e) {
+        //     console.log(e.type);
+        //     console.log(e.target);
+        //     let name = input.value;
+        //     result.textContent = "Welcome " + name;
+        // });
+    </script>
+</body>
+
+</html>

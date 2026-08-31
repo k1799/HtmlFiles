@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form">
+        <h3>regitration form</h3>
+        <input type="text" name="" id="user" placeholder="Enter Your Full Name"><br><br>
+
+        <input type="email" name="" id="gmail" placeholder="Enter Your Email"><br><br>
+        <input type="text" name="" id="phone" placeholder="Enter Your phone no"><br><br>
+        <input type="text" name="" id="age" placeholder="Enter Your age"><br><br>
+
+        <button type="submit" onclick="store()">Register</button>
+    </form>
+  
+    <script>
+        // ithu vanthu namala event create pani panurathu (addEventListener)itha vachu using
+        
+        // document.getElementById("form").addEventListener("submit", function(event) {
+        //     event.preventDefault();
+        //     let user = {
+        //         name: document.getElementById("user").value,
+        //         email: document.getElementById("gmail").value,
+        //         phone: document.getElementById("phone").value,
+        //         age: document.getElementById("age").value
+        //     };
+        //     console.log(user);
+        // });
+
+        //another concept object show console
+        function store()
+            {
+               event.preventDefault();
+               let user=document.getElementById("user").value;
+               let mail=document.getElementById("gmail").value;
+               let pno=document.getElementById("phone").value;
+               let age=document.getElementById("age").value;
+               let det={
+                name:user,
+                pasword:mail,
+                phone:pno,
+                age:age
+               };
+
+               console.log(det)
+            
+
+            }
+    </script>
+
+</body>
+
+</html>
+
+

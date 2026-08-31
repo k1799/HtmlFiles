@@ -1,0 +1,333 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Form</title>
+</head>
+
+<body> -->
+    <!-- QUESTION 2:
+    I.Create a form.The form should contain three buttons:
+    Save
+    Update
+    View.
+    II.When:
+    Save button is clicked → Send form data to a server using Fetch API (POST method) in JSON format.
+    Update button is clicked → Update existing data using Fetch API (PUT method).
+    View button is clicked → Fetch and display all records using Fetch API (GET method) in table format.
+    III. Use:
+    fetch()
+    JSON object -->
+    <!-- <h2>User Form</h2>
+    <form action="" id="myform">
+        <label for="">Name:</label>
+        <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+        <label for="">Email:</label>
+        <input type="email" id="email" placeholder="Enter Email"><br><br>
+
+        <label for="">Age:</label>
+        <input type="number" id="age" placeholder="Age"><br><br>
+
+        <button type="button" onclick="savedata()">Save</button>
+        <button type="button" onclick="updatedata()">Update</button>
+        <button type="button" onclick="viewdata()">View</button>
+    </form>
+    <h2>Users</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+
+    <script>
+        let API = "http://localhost:3000/users";
+
+        function savedata() {
+            let user = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value
+            };
+            fetch(API, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(user)
+            })
+                .then(Response => Response.json())
+                .then(data => {
+                    console.log("Saved:", data);
+                    alert("Data Saved Successfully");
+                    document.getElementById("myform").reset();
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        function updatedata() {
+            let id = prompt("Enter ID to update");
+            let user = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value
+            };
+            fetch(`${API}/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(user)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Updated:", data);
+                    alert("Data Updated Successfully");
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        function viewdata() {
+            fetch(API)
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody =
+                        document.getElementById("tablebody");
+                    tableBody.innerHTML = "";
+                    data.forEach(user => {
+                        let row = `
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.age}</td>
+                        </tr>
+                    `;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Form</title>
+</head>
+
+<body>
+
+    <h2>User Form</h2>
+
+    <form action="" id="myform">
+
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter Name">
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter Email">
+        <br><br>
+
+        <label>Age:</label>
+        <input type="number" id="age" placeholder="Age">
+        <br><br>
+
+        <button type="button" onclick="savedata()">Save</button>
+        <button type="button" onclick="updatedata()">Update</button>
+        <button type="button" onclick="viewdata()">View</button>
+
+    </form>
+
+
+    <h2>Users</h2>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablebody"></tbody>
+
+    </table>
+
+
+    <script>
+
+        let API = "http://localhost:3000/users";
+
+
+        // SAVE
+        function savedata() {
+
+            let user = {
+
+                name: document.getElementById("name").value,
+
+                email: document.getElementById("email").value,
+
+                age: document.getElementById("age").value
+
+            };
+
+
+            fetch(API, {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(user)
+
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                console.log("Saved:", data);
+
+                alert("Data Saved Successfully");
+
+                document.getElementById("myform").reset();
+
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+            });
+
+        }
+
+
+        // UPDATE
+        function updatedata() {
+
+            let id = prompt("Enter ID to update");
+
+
+            let user = {
+
+                name: document.getElementById("name").value,
+
+                email: document.getElementById("email").value,
+
+                age: document.getElementById("age").value
+
+            };
+
+
+            fetch(`${API}/${id}`, {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(user)
+
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                console.log("Updated:", data);
+
+                alert("Data Updated Successfully");
+
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+            });
+
+        }
+
+
+        // VIEW
+        function viewdata() {
+
+            fetch(API)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                let tableBody =
+                    document.getElementById("tablebody");
+
+                tableBody.innerHTML = "";
+
+
+                data.forEach(user => {
+
+                    let row = `
+
+                        <tr>
+
+                            <td>${user.id}</td>
+
+                            <td>${user.name}</td>
+
+                            <td>${user.email}</td>
+
+                            <td>${user.age}</td>
+
+                        </tr>
+
+                    `;
+
+                    tableBody.innerHTML += row;
+
+                });
+
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
