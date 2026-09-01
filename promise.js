@@ -9,16 +9,16 @@
 //     }
 // })
 //false na suma iruntha error mathiri varum atha handle pana than intha then,catch,finally use panurom ithu java la partha mathiri tha
-// Promises
-// .then(function(result){
-// console.log(result);
-// })
-// .catch(function(error){
-//     console.log(error);
-// })
-// .finally(function(){
-//     console.log("promise completed");
-// })
+Promises
+.then(function(result){
+console.log(result);
+})
+.catch(function(error){
+    console.log(error);
+})
+.finally(function(){
+    console.log("promise completed");
+})
 
 //Arrow function using promise no then,catch,finally
 // let a=new Promise((resolve,reject)=> 

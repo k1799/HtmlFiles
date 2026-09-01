@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Details</title>
+
+    <style>
+        /* body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .student {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Details</h2>
+    <div class="student">
+        <label>ID</label>
+        <input type="text" id="studentId"><br><br>
+        <label>Name</label>
+        <input type="text" id="name"><br><br>
+        <label>Age</label>
+        <input type="text" id="age"><br><br>
+        <label>Email</label>
+        <input type="text" id="email"><br><br>
+        <label>Phone</label>
+        <input type="text" id="phone"><br><br>
+        <button type="button" onclick="show()">Submit</button>
+    </div>
+
+
+
+    <script>
+        async function show() {
+            let id = document.getElementById("studentId").value;
+            let data = await fetch(`https://dummyjson.com/users/` + id)
+            let res = await data.json();
+
+            document.getElementById("name").value = res.firstName;
+            document.getElementById("age").value = res.age;
+            document.getElementById("email").value = res.email;
+            document.getElementById("phone").value = res.phone;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+</head>
+<body>
+    <h2>Task List</h2>
+
+    <input type="text" id="taskinput" placeholder="Enter a task">
+
+    <button id="addbtn">Add Task</button>
+
+    <ul id="tasklist"></ul>
+
+    <script>
+        let input = document.getElementById("taskinput");
+        let btn = document.getElementById("addbtn");
+        let list = document.getElementById("tasklist");
+
+        function addtask(){
+            let task = input.value.trim();
+
+            if (task !== "") {
+                let li = document.createElement("li");
+                li.textContent = task;
+                list.appendChild(li);
+                input.value = "";
+                input.focus();
+            }
+        }
+        btn.addEventListener("click", addtask);
+        input.addEventListener("keydown", function(event){
+            if (event.key === "Enter") {
+                addtask();
+            }
+        });
+    </script>
+</body>
+</html>
