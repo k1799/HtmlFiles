@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Student Details</h2>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="email" placeholder="Email">
+
+    <br><br>
+
+    <button onclick="save()">Save</button>
+    <button onclick="show()">Show</button>
+    <button onclick="clearData()">Clear</button>
+
+    <div id="result"></div>
+
+
+    <script>
+
+        function save() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+
+            alert("Saved Successfully");
+        }
+
+
+        function show() {
+
+            let name = localStorage.getItem("name");
+            let email = localStorage.getItem("email");
+
+            document.getElementById("result").innerHTML = `
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+
+                    <tr>
+                        <td>${name}</td>
+                        <td>${email}</td>
+                    </tr>
+                </table>
+            `;
+        }
+
+
+        function clearData() {
+
+            localStorage.clear();
+
+            document.getElementById("result").innerHTML = "";
+
+            alert("Cleared Successfully");
+        }
+
+    </script>
+
+</body>
+</html>
+

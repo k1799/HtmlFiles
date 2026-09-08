@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Users</title>
+    <style>
+        /* body{
+            text-align: center;
+        } */
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* li{
+            margin: 10px;
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <button onclick="loadusers()">Load Users</button>
+    <h2>User List</h2>
+    <ol id="list"></ol>
+    <script>
+        async function loadusers() {
+            let response = await fetch("https://jsonplaceholder.typicode.com/users");
+            let users = await response.json();
+            let list = document.getElementById("list");
+            // list.innerHTML = "Loading...";
+            users.forEach(user => {
+                let li = document.createElement("li");
+                li.innerHTML = user.name + " - " + user.email;
+                list.appendChild(li);
+            });
+            //another concept
+            // try{
+            //     let response = await fetch("https://jsonplaceholder.typicode.com/users");
+            //     let users = await response.json();
+            //     list.innerHTML = "";
+            //     users.forEach(users => {
+            //         let li = document.createElement("li");
+            //         li.innerHTML = users.name + "<br>" +users.email;
+            //         list.appendChild(li);
+            //     });
+            // }
+            // catch(error){
+            //   list.innerHTML = "Error loading users";
+            // }
+        }
+
+        // another sample js 
+        // async function show() {
+        //     let response = await fetch("https://jsonplaceholder.typicode.com/users");
+        //     let data = await response.json();
+        //     let list = document.getElementById("list");
+        //     for (let a = 0; a < 5; a++) {
+        //         let li = document.createElement("li");
+        //         li.innerText = data[a].name; list.appendChild(li);
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

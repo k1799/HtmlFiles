@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch PUT</title>
+</head>
+
+<body>
+
+    <h2>Update User</h2>
+
+    <button onclick="updateData()">Update</button>
+
+    <script>
+
+        async function updateData() {
+
+            let student = {
+                name: "Kannan Updated",
+                email: "new@gmail.com"
+            };
+
+            try {
+
+                let response = await fetch(
+                    "https://jsonplaceholder.typicode.com/users/1",
+                    {
+                        method: "PUT",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(student)
+                    }
+                );
+
+                let data = await response.json();
+
+                console.log(data);
+
+                alert("Updated Successfully");
+
+            }
+            catch (error) {
+
+                console.log(error);
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

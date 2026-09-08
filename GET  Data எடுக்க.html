@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch GET</title>
+</head>
+<body>
+
+    <button onclick="getData()">Get Data</button>
+
+    <script>
+
+        async function getData() {
+
+            try {
+
+                let response = await fetch(
+                    "https://jsonplaceholder.typicode.com/users"
+                );
+
+                let data = await response.json();
+
+                console.log(data);
+
+            }
+            catch (error) {
+
+                console.log(error);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

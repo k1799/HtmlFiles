@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <!-- Program
+    LocalStorage
+    Create a simple form (name input). Save the value in localStorage and
+    automatically display it when page reloads. -->
+    <h2>Local Storage</h2>
+    <input type="text" id="name" placeholder="Enter Your Name">
+    <button onclick="savename()">Save</button>
+    <h3 id="display"></h3>
+    <script>
+        function savename() {
+            let name = document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            displayname();
+        }
+        function displayname() {
+            let name = localStorage.getItem("name");
+            document.getElementById("display").innerHTML = name;
+        }
+        displayname();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            background-color: white;
+            color: black;
+        }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cookies
+    Store a theme preference (dark/light) in cookies and apply the same theme
+    when the page reloads. -->
+    <h2>Theme preference</h2>
+    <p>This is my website.</p>
+    <button onclick="settheme('dark')">Dark</button>
+    <button onclick="settheme('light')">Light</button>
+    <script>
+        function settheme(theme) {
+            document.cookie = "theme=" + theme + "; max-age=604800";
+            applytheme(theme);
+        }
+         function applytheme(theme) {
+            document.body.className = theme;
+        }
+        function gettheme() {
+            let cookies = document.cookie.split("; ");
+            for (let cookie of cookies) {
+                let parts = cookie.split("=");
+                if (parts[0] == "theme") {
+                    return parts[1];
+                }
+            }
+            return "light";
+        }
+        let theme = gettheme();
+        applytheme(theme);
+    </script>
+</body>
+
+</html>

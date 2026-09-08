@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <!-- SessionStorage
+    Create a counter using sessionStorage that increases every time the button
+    is clicked and resets when tab is closed. -->
+    <h2>Session Storage</h2>
+    <h3 id="count">0</h3>
+    <button onclick="increase()">Click Me</button>
+    <script>
+        let count = sessionStorage.getItem("count");
+        if(count == null){
+            count = 0;
+        }
+        document.getElementById("count").innerHTML = count;
+        function increase() {
+            count++;
+            sessionStorage.setItem("count", count);
+            document.getElementById("count").innerHTML = count;
+        }
+    </script>
+</body>
+</html>
